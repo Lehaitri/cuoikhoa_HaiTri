@@ -1,0 +1,410 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    /* remove flex so footer sits below main and page can grow */
+    background:#f4f7fb;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:260px;
+    background:linear-gradient(180deg,#005f8f,#008dbd);
+    color:white;
+    padding:30px 20px;
+
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    /* make the sidebar fixed */
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    height:100vh;
+    z-index:1000;
+    overflow-y:auto;
+}
+
+.logo h2{
+    font-size:30px;
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    padding:15px 10px;
+    margin-bottom:10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar ul li:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+.chat-btn{
+    border:none;
+    padding:14px;
+    border-radius:40px;
+    background:white;
+    color:#0077aa;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* MAIN */
+
+.main{
+    flex:1;
+    padding:20px 30px 80px;
+    /* offset main content to account for the fixed sidebar */
+    margin-left:260px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.topbar input{
+    width:250px;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:white;
+}
+
+.topbar button{
+    padding:12px 18px;
+    border:none;
+    border-radius:30px;
+    background:#008dbd;
+    color:white;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    height:500px;
+    border-radius:30px;
+    overflow:hidden;
+
+    background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')
+    center/cover no-repeat;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+.content{
+    position:absolute;
+    top:50%;
+    left:70px;
+    transform:translateY(-50%);
+    color:white;
+    z-index:2;
+    width:500px;
+}
+
+.content p{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.content h1{
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.content button{
+    padding:15px 30px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#0077aa;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* BOOKING BOX */
+
+.booking-box{
+    width:85%;
+    background:white;
+    padding: 30px;
+    border-radius:25px;
+    margin: -70px auto 0 auto;
+    position:relative;
+    z-index: 10;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.tabs{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.tabs span{
+    color:#777;
+    cursor:pointer;
+}
+
+.tabs .active{
+    color:#008dbd;
+    font-weight:600;
+}
+
+.form{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:end;
+}
+
+.input-box{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.input-box label{
+    margin-bottom:8px;
+    color:#666;
+}
+
+.input-box input{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+}
+
+.search-btn{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#008dbd;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* EXPERIENCE SECTION */
+
+.experience{
+    padding: 100px 20px 60px;
+}
+
+.experience-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.experience-header h2{
+    font-size:55px;
+    font-weight:600;
+}
+
+.experience-header h2 span{
+    color:#0d89b8;
+}
+
+.filters{
+    display:flex;
+    gap:15px;
+}
+
+.filters button{
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    background:#f1f1f1;
+    cursor:pointer;
+}
+
+.experience-container{
+    display:flex;
+    gap:25px;
+}
+
+/* LEFT MENU */
+
+.left-menu{
+    width:320px;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.left-menu h3{
+    background:#b8860b;
+    color:white;
+    padding:20px;
+    font-size:28px;
+}
+
+.left-menu ul{
+    list-style:none;
+}
+
+.left-menu ul li{
+    padding:22px;
+    border-bottom:1px solid #eee;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.left-menu ul li:hover{
+    background:#f7f7f7;
+}
+
+.left-menu .active{
+    background:#fff7d8;
+    color:#b8860b;
+    font-weight:600;
+}
+
+/* CARDS */
+
+.cards{
+    flex:1;
+    display:flex;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    flex:1;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card p{
+    padding:20px;
+    font-size:20px;
+    font-weight:500;
+}
+
+/* FOOTER */
+.footer{
+    width:100%;
+    /* muted light blue background */
+    background: linear-gradient(180deg, #eaf6ff 0%, #f5fbff 100%);
+    /* moved up a bit */
+    margin-top:40px;
+    padding:70px 60px;
+    position:relative;
+    z-index:1;
+    color:#093547; /* subtle dark-blue text for contrast */
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:0 auto;
+
+    display:flex;
+    justify-content:space-between;
+    gap:80px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+}
+
+.footer-col{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    min-width:180px;
+}
+
+.footer-col h2{
+    font-size:22px;
+    font-weight:600;
+    color:#06324a; /* darker blue heading */
+    margin-bottom:6px;
+}
+
+.footer-col a{
+    text-decoration:none;
+    color:#145c73; /* muted blue links */
+    font-size:16px;
+    transition:0.25s ease;
+    display:block;
+}
+
+.footer-col a:hover{
+    color:#008dbd;
+    transform:translateX(6px);
+}
+
+/* small copyright / extra note */
+.footer-note{
+    width:100%;
+    text-align:center;
+    margin-top:30px;
+    color:#888;
+    font-size:14px;
+}
+
+/* When sidebar is fixed, shift footer content on larger screens so it aligns with main content */
+@media (min-width:900px){
+    .footer-container{
+        padding-left:260px; /* matches sidebar width */
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width:900px){
+    .footer{
+        padding:40px 20px;
+    }
+
+    .footer-col h2{
+        font-size:20px;
+    }
+
+    .footer-col a{
+        font-size:15px;
+    }
+
+    .footer-container{
+        padding-left:0;
+        gap:30px;
+    }
+}

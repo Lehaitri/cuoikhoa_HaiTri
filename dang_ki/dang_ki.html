@@ -101,6 +101,7 @@
                     <label>Email *</label>
 
                     <input
+                    id="email"
                     type="email"
                     class="form-control"
                     placeholder="Nhập Email">
@@ -112,7 +113,7 @@
 
                     <label>Mã vùng *</label>
 
-                    <select class="form-select">
+                    <select id="countryCode" class="form-select">
 
                         <option>+84</option>
                         <option>+1</option>
@@ -128,7 +129,8 @@
                     <label>Số điện thoại *</label>
 
                     <input
-                    type="text"
+                    id="phone"
+                    type="tel"
                     class="form-control"
                     placeholder="Nhập số điện thoại">
 
@@ -138,7 +140,7 @@
 
             <div class="btn-box">
 
-                <button class="next-btn">
+                <button class="next-btn" onclick="register()">
                     Tiếp tục
                 </button>
 
@@ -185,5 +187,6 @@
 
 </div>
 
+<script src="dang_ki.js"></script>
 </body>
 </html>

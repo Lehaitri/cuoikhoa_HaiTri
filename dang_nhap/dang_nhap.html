@@ -18,37 +18,38 @@
 
 <div class="sidebar">
 
-    <div class="logo">
-        <h2>✈ Haha Airlines</h2>
-    </div>
+<div class="logo">
+<h2>✈ Haha Airlines</h2>
+</div>
 
-    <ul class="menu">
+<ul class="menu">
 
-        <li>🌍 Khám Phá</li>
-        <li>🎫 Mua Vé</li>
-        <li>🛎 Dịch vụ hỗ trợ</li>
-        <li>🧭 Hành trình</li>
-        <li>✈ Trải nghiệm bay</li>
-        <li>👑 FlyPoint</li>
-        <li>❓ Trợ giúp</li>
+<li>🌍 Khám Phá</li>
+<li>🎫 Mua Vé</li>
+<li>🛎 Dịch vụ hỗ trợ</li>
+<li>🧭 Hành trình</li>
+<li>✈ Trải nghiệm bay</li>
+<li>👑 FlyPoint</li>
+<li>❓ Trợ giúp</li>
 
-    </ul>
+</ul>
 
-    <div class="member">
+<div class="member">
 
-        <h4>FlyPoint Rewards</h4>
+<h4>FlyPoint Rewards</h4>
 
-        <button class="btn-login">
-            Đăng nhập
-        </button>
+<button class="btn-login">
+Đăng nhập
+</button>
 
-        <button class="btn-register">
-            Đăng ký
-        </button>
-
-    </div>
+<button class="btn-register">
+Đăng ký
+</button>
 
 </div>
+
+</div>
+
 
 
 <!-- MAIN -->
@@ -78,34 +79,39 @@ VI
 Đăng nhập để tiếp tục sử dụng Haha Airlines
 </p>
 
+
+
 <div class="mb-3">
 
 <label class="form-label">
-Tên tài khoản
+Email
 </label>
 
 <input
 id="username"
-type="text"
+type="email"
 class="form-control"
-placeholder="Nhập tên tài khoản">
+placeholder="Nhập Email">
 
 </div>
+
 
 
 <div class="mb-3">
 
 <label class="form-label">
-Mật khẩu
+Số điện thoại
 </label>
 
 <input
 id="password"
-type="password"
+type="text"
 class="form-control"
-placeholder="Nhập mật khẩu">
+placeholder="Nhập số điện thoại">
 
 </div>
+
+
 
 <div class="remember">
 
@@ -124,6 +130,7 @@ Quên mật khẩu?
 </div>
 
 
+
 <button
 class="loginButton"
 onclick="login()">
@@ -132,11 +139,12 @@ onclick="login()">
 
 </button>
 
+
 <div class="register-text">
 
 Chưa có tài khoản?
 
-<a href="dang_ky.html">
+<a href="../dang_ki/dang_ki.html">
 
 Đăng ký ngay
 
@@ -144,22 +152,28 @@ Chưa có tài khoản?
 
 </div>
 
-</div>
 
 </div>
 
 </div>
+
+</div>
+
+
 
 <script>
 
 function login(){
 
-let username=
-document.getElementById("username").value;
+let email=
+document.getElementById("username")
+.value
+.trim();
 
-let password=
-document.getElementById("password").value;
-
+let phone=
+document.getElementById("password")
+.value
+.trim();
 
 let user=
 JSON.parse(
@@ -167,18 +181,40 @@ localStorage.getItem("user")
 );
 
 
+if(!email || !phone){
+
+alert("Vui lòng nhập đầy đủ");
+return;
+
+}
+
+
+phone=
+phone.replace(/\D/g,'');
+
+let savedPhone=
+user.phone
+.replace(/\D/g,'');
+
+
 if(
+
 user &&
-username===user.username &&
-password===user.password
+email===user.email &&
+phone===savedPhone
+
 ){
 
 alert("Đăng nhập thành công");
 
+window.location.href=
+"../trang_chu/trang_chu.html";
+
 }
+
 else{
 
-alert("Sai tài khoản hoặc mật khẩu");
+alert("Sai Email hoặc số điện thoại");
 
 }
 

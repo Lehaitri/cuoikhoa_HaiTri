@@ -332,7 +332,7 @@ body{
     padding:70px 60px;
     position:relative;
     z-index:1;
-    color:#093547; /* subtle dark-blue text for contrast */
+    color:#093547; 
 }
 
 .footer-container{
@@ -356,13 +356,13 @@ body{
 .footer-col h2{
     font-size:22px;
     font-weight:600;
-    color:#06324a; /* darker blue heading */
+    color:#06324a; 
     margin-bottom:6px;
 }
 
 .footer-col a{
     text-decoration:none;
-    color:#145c73; /* muted blue links */
+    color:#145c73; 
     font-size:16px;
     transition:0.25s ease;
     display:block;
@@ -385,7 +385,7 @@ body{
 /* When sidebar is fixed, shift footer content on larger screens so it aligns with main content */
 @media (min-width:900px){
     .footer-container{
-        padding-left:260px; /* matches sidebar width */
+        padding-left:260px; 
     }
 }
 
@@ -407,4 +407,88 @@ body{
         padding-left:0;
         gap:30px;
     }
+}
+#result{
+  width:100%;
+  max-width:1000px;
+  margin:20px auto;
+}
+
+/* CARD GIỐNG HỆ THỐNG CŨ */
+.result-card{
+  display:flex;
+  background:white;
+  margin-bottom:22px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+/* LEFT */
+.result-card .info{
+  width:50%;
+  padding:22px;
+  display:flex;
+  align-items:center;
+}
+
+.result-card .time{
+  font-size:28px;
+  font-weight:bold;
+  color:#006b84;
+}
+
+.result-card .city{
+  font-weight:bold;
+  margin-top:6px;
+}
+
+.result-card .line{
+  width:110px;
+  border-top:2px dashed gray;
+  margin:8px 0;
+}
+
+.result-card .detail{
+  font-size:14px;
+  color:#666;
+}
+
+/* RIGHT */
+.result-card .ticket{
+  width:50%;
+  display:flex;
+  gap:10px;
+  padding:10px;
+}
+
+.result-card .box{
+  flex:1;
+  height:180px;
+  padding:20px 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  border-radius:14px;
+}
+
+.normal{background:#006b84;color:white;}
+.special{background:#cfe2e4;}
+.business{background:#e2b53f;}
+
+.box{
+  transition: all 0.25s ease;
+}
+
+.box:hover{
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* khi được chọn */
+.box.selected{
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border: 2px solid #006b84;
 }

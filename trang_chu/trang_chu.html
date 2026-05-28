@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div class="sidebar">
@@ -27,7 +28,9 @@
         <li>❓ Trợ giúp</li>
     </ul>
 
-    <button class="chat-btn">Chat với AI</button>
+    <button class="chat-btn">
+      Chat với AI
+    </button>
   </div>
 
   <section class="main">
@@ -38,18 +41,16 @@
     </div>
 
     <div class="hero">
-
       <div class="overlay"></div>
 
       <div class="content">
         <p>Bay muôn nơi</p>
         <h1>Tiết kiệm tới 30% hành trình tiếp theo</h1>
-
         <button>Khám phá ngay</button>
       </div>
-
     </div>
 
+    <!-- BOOKING -->
     <div class="booking-box">
 
       <div class="tabs">
@@ -59,38 +60,40 @@
         <span>Trạng thái chuyến bay</span>
       </div>
 
-      <div class="form">
+      <!-- 🔥 CHỈ SỬA FORM -->
+      <form class="form" id="searchForm">
 
         <div class="input-box">
           <label>Từ</label>
-          <input type="text" placeholder="Hà Nội">
+          <input type="text" id="from" placeholder="Hà Nội" required>
         </div>
 
         <div class="input-box">
           <label>Đến</label>
-          <input type="text" placeholder="TP Hồ Chí Minh">
+          <input type="text" id="to" placeholder="TP Hồ Chí Minh" required>
         </div>
 
         <div class="input-box">
           <label>Ngày đi</label>
-          <input type="date">
+          <input type="date" id="date" required>
         </div>
 
-        <button class="search-btn">
+        <button type="submit" class="search-btn">
           Tìm chuyến bay
         </button>
 
-      </div>
+      </form>
 
     </div>
-<!-- EXPERIENCE SECTION -->
+
+    <!-- 🔥 KẾT QUẢ HIỂN THỊ -->
+    <div id="result"></div>
+
 
 <section class="experience">
 
     <div class="experience-header">
-        <h2>
-            Trọn vẹn <span>trải nghiệm</span>
-        </h2>
+        <h2>Trọn vẹn <span>trải nghiệm</span></h2>
 
         <div class="filters">
             <button>Dịch vụ mặt đất</button>
@@ -100,78 +103,59 @@
 
     <div class="experience-container">
 
-        <!-- LEFT MENU -->
-
         <div class="left-menu">
-
             <h3>Thương Gia</h3>
-
             <ul>
                 <li class="active">Làm thủ tục →</li>
                 <li>Hành lý</li>
                 <li>Thông tin sân bay</li>
                 <li>Chuẩn bị cho chuyến bay</li>
             </ul>
-
         </div>
 
-        <!-- RIGHT CONTENT -->
-
         <div class="cards">
-
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-
                 <p>Làm thủ tục trực tuyến</p>
             </div>
 
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1529074963764-98f45c47344b">
-
                 <p>Làm thủ tục xuất cảnh</p>
             </div>
 
             <div class="card">
                 <img src="https://image.bnews.vn/MediaUpload/Org/2020/01/09/090209_img-7121.JPG">
-
                 <p>Làm thủ tục tại sân bay</p>
             </div>
-
         </div>
 
     </div>
 
 </section>
+
   </section>
+
 <footer class="footer">
 
     <div class="footer-container">
 
-        <!-- COLUMN 1 -->
-
         <div class="footer-col">
             <h2>Haha Travel</h2>
-
             <a href="#">Giới thiệu</a>
             <a href="#">Đội bay</a>
             <a href="#">Đối tác</a>
         </div>
 
-        <!-- COLUMN 2 -->
-
         <div class="footer-col">
             <h2>Hỗ trợ</h2>
-
             <a href="#">FAQ</a>
             <a href="#">Trung tâm trợ giúp</a>
             <a href="#">Liên hệ</a>
         </div>
 
-        <!-- COLUMN 3 -->
-
         <div class="footer-col">
             <h2>Thông tin</h2>
-
             <a href="#">Điều khoản</a>
             <a href="#">Bảo mật</a>
         </div>
@@ -179,5 +163,8 @@
     </div>
 
 </footer>
+
+<script src="chon_chuyen_sing.js"></script>
+
 </body>
 </html>
